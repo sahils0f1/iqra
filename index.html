@@ -2,237 +2,500 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Iqra</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Happy Birthday Farhat!</title>
 <style>
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    touch-action: manipulation;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
 
-body{
-margin:0;
-font-family:Poppins;
-background:#f4d7c8;
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-}
+  body {
+    font-family: 'Georgia', serif;
+    background: #0d0d0d;
+    color: #fff;
+    padding-bottom: 90px;
+  }
 
-/* screens */
+  /* --- CURTAIN OVERLAY --- */
+  #curtain-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 99999;
+    display: flex; justify-content: center; align-items: center;
+    background: #000;
+    cursor: pointer;
+  }
+  .curtain-panel {
+    position: absolute; top: 0;
+    width: 50vw; height: 100vh;
+    background: linear-gradient(to right, #7a0016, #b80024, #7a0016, #b80024);
+    background-size: 60px 100%;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  .curtain-left { left: 0; transform-origin: left; }
+  .curtain-right { right: 0; transform-origin: right; }
+  .open-left { transform: translateX(-100%); }
+  .open-right { transform: translateX(100%); }
+  .curtain-content { position: relative; z-index: 10000; text-align: center; transition: opacity 0.5s ease; pointer-events: none; }
+  .curtain-title { font-size: 2.5rem; font-weight: 900; letter-spacing: 3px; color: #ffe8b6; font-family: 'Impact', sans-serif; margin-bottom: 10px; }
+  .tap-btn {
+    margin-top: 20px;
+    background: #ffe8b6;
+    color: #1a1a1a;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 232, 182, 0.4);
+    animation: pulse 1.5s infinite;
+  }
 
-.screen{
-display:none;
-}
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
 
-.active{
-display:block;
-}
+  /* --- SECTIONS --- */
+  section {
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 30px 20px;
+  }
 
-/* card */
+  /* --- SECTION 1: HEADER & LOOP --- */
+  #section1 { background: #e8e3d9; color: #333; justify-content: flex-start; padding-top: 40px; }
+  .ribbon-text-container { width: 100%; text-align: center; margin-bottom: 20px; }
+  .ribbon-header { font-size: 2.5rem; color: #2b2b2b; line-height: 1.2; margin-bottom: 12px; font-weight: bold; }
+  .ribbon-subtext { font-size: 0.95rem; color: #555; line-height: 1.5; max-width: 90%; margin: 0 auto; font-family: sans-serif; }
+  .ribbon-loop-container { position: relative; width: 100%; max-width: 380px; height: 520px; }
+  .ribbon-photo { width: 65px; height: 85px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.25); position: absolute; border-radius: 6px; }
 
-.card{
-background:white;
-padding:40px;
-border-radius:18px;
-width:90%;
-max-width:420px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
+  .p1  { top: 78%; left: 4%;  transform: rotate(-10deg); }
+  .p2  { top: 68%; left: 16%; transform: rotate(5deg); }
+  .p3  { top: 56%; left: 26%; transform: rotate(-12deg); }
+  .p4  { top: 42%; left: 34%; transform: rotate(8deg); }
+  .p5  { top: 28%; left: 36%; transform: rotate(-20deg); }
+  .p6  { top: 14%; left: 40%; transform: rotate(-35deg); }
+  .p7  { top: 4%;  left: 50%; transform: rotate(0deg); }
+  .p8  { top: 10%; left: 64%; transform: rotate(30deg); }
+  .p9  { top: 24%; left: 60%; transform: rotate(55deg); }
+  .p10 { top: 36%; left: 50%; transform: rotate(75deg); }
+  .p11 { top: 48%; left: 58%; transform: rotate(15deg); }
+  .p12 { top: 60%; left: 70%; transform: rotate(-8deg); }
+  .p13 { top: 72%; left: 82%; transform: rotate(-18deg); }
 
-/* title */
+  /* --- SECTION 2: PRECIOUS MOMENTS --- */
+  #section2 { background: #18151f; color: #fff; padding: 40px 15px; }
+  .sec2-title { font-size: 2.2rem; color: #f7e7c4; margin-bottom: 25px; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+  .polaroid-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%; max-width: 420px; }
+  .polaroid-card { background: #fff; padding: 6px 6px 18px 6px; border-radius: 4px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); transform: rotate(calc(var(--r) * 1deg)); transition: transform 0.3s ease; cursor: pointer; }
+  .polaroid-card:hover { transform: scale(1.05) rotate(0deg); z-index: 5; }
+  .polaroid-card img { width: 100%; height: 110px; object-fit: cover; border-radius: 2px; }
+  .polaroid-card p { font-size: 0.7rem; color: #222; font-weight: 600; text-align: center; margin-top: 6px; font-family: sans-serif; }
 
-#title{
-font-size:34px;
-font-weight:700;
-color:#ff4d6d;
-margin-bottom:20px;
-min-height:40px;
-}
+  .floating-note {
+    display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: rgba(35, 30, 40, 0.95); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff; padding: 16px 20px; border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+    z-index: 10001; width: 270px; text-align: left; animation: fadeIn 0.3s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translate(-50%, -45%); } to { opacity: 1; transform: translate(-50%, -50%); } }
+  .note-header { display: flex; justify-content: space-between; font-size: 0.65rem; color: #888; margin-bottom: 8px; font-family: monospace; }
+  .note-header .close-btn { cursor: pointer; color: #ccc; }
+  .note-text { font-size: 0.85rem; line-height: 1.4; color: #eee; font-family: sans-serif; }
 
-/* message */
+  /* --- SECTION 3: NOTEBOOK --- */
+  #section3 { background: #1f1b24; }
+  
+  .notebook-wrapper {
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-#message{
-font-size:17px;
-line-height:1.7;
-color:#444;
-min-height:160px;
-white-space:pre-line;
-}
+  .notebook {
+    width: 100%;
+    height: 400px;
+    background: #fffdf5;
+    background-image: linear-gradient(#e1e8ed 1px, transparent 1px);
+    background-size: 100% 28px;
+    border-radius: 8px 16px 16px 8px;
+    border-left: 12px solid #8b0000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 15px rgba(0,0,0,0.05);
+    padding: 24px 20px 20px 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-/* gif */
+  .pen-heading {
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    color: #1a2a3a;
+    font-weight: bold;
+    border-bottom: 2px solid #d9534f;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+  }
 
-#gifScreen img{
-width:260px;
-border-radius:12px;
-}
+  .pen-message {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #0d233a;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+    min-height: 140px;
+  }
 
-/* input */
+  .pen-photo {
+    width: 95px;
+    height: 115px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    transform: rotate(-3deg);
+    align-self: flex-end;
+  }
 
-input{
-padding:10px;
-border-radius:8px;
-border:1px solid #ccc;
-width:180px;
-margin-top:10px;
-}
+  .book-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+  }
 
-button{
-margin-top:15px;
-padding:10px 20px;
-border:none;
-border-radius:20px;
-background:#ff4d6d;
-color:white;
-cursor:pointer;
-}
+  .nav-btn {
+    background: #ffe8b6;
+    color: #1a1a1a;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    touch-action: manipulation;
+  }
 
-button:hover{
-background:#ff3355;
-}
+  .page-indicator {
+    color: #ffe8b6;
+    font-family: monospace;
+    font-size: 0.85rem;
+  }
 
+  /* --- SECTION 4: iMESSAGE CHAT --- */
+  #section4 { background: #121212; }
+  .phone-frame { width: 290px; height: 520px; background: #000; border-radius: 35px; border: 4px solid #333; padding: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.8); display: flex; flex-direction: column; }
+  .phone-header { text-align: center; padding-bottom: 8px; border-bottom: 1px solid #222; }
+  .phone-header h4 { font-size: 0.9rem; color: #fff; font-family: sans-serif; }
+  .phone-header p { font-size: 0.65rem; color: #888; font-family: sans-serif; }
+  .chat-body { flex: 1; padding: 12px 0; display: flex; flex-direction: column; gap: 10px; font-family: sans-serif; }
+  .bubble { max-width: 80%; padding: 8px 12px; border-radius: 16px; font-size: 0.8rem; }
+  .bubble.incoming { background: #262628; color: #fff; align-self: flex-start; }
+  .bubble.outgoing { background: #ffd60a; color: #000; font-weight: 600; align-self: flex-end; }
+
+  /* --- BOTTOM MUSIC CONTROLLER --- */
+  .music-bar {
+    position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+    background: #1c1a1f; border: 1px solid #2e2a34; padding: 8px 16px; border-radius: 40px;
+    display: flex; align-items: center; gap: 12px; z-index: 10000; width: 90%; max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+  }
+  .play-btn { background: #f7e7c4; border: none; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; color: #111; flex-shrink: 0; }
+  .track-info { display: flex; flex-direction: column; flex-grow: 1; overflow: hidden; font-family: sans-serif; }
+  .track-title { font-size: 0.8rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 6px; }
+  .progress-container { display: flex; align-items: center; gap: 8px; width: 100%; margin-top: 2px; }
+  .time-text { font-size: 0.65rem; color: #999; font-family: monospace; min-width: 28px; }
+  .seek-bar { flex-grow: 1; height: 5px; appearance: none; background: #383242; border-radius: 3px; outline: none; cursor: pointer; }
+  .seek-bar::-webkit-slider-thumb { appearance: none; width: 10px; height: 10px; border-radius: 50%; background: #f7e7c4; cursor: pointer; }
 </style>
 </head>
-
 <body>
 
-<!-- PASSWORD SCREEN -->
-
-<div id="login" class="screen active">
-
-<div class="card">
-
-<h2>Private Page 🔒</h2>
-
-<input type="password" id="pass" placeholder="Password">
-
-<br>
-
-<button onclick="checkPass()">Enter</button>
-
-</div>
-
-</div>
-
-<!-- GIF SURPRISE -->
-
-<div id="gifScreen" class="screen">
-
-<div class="card">
-
-<img src="https://64.media.tumblr.com/6f8c976e4b9ca4fb6ef602a209d5dc1d/75977a3f5d4ae7cd-d4/s540x810/da3df3c74870a8eb30204c037248a0856e92bf57.gifv">
-
-<h3>Surprise 🎉</h3>
-
-</div>
-
-</div>
-
-<!-- MAIN PAGE -->
-
-<div id="main" class="screen">
-
-<div class="card">
-
-<div id="title"></div>
-
-<div id="message"></div>
-
-</div>
-
-</div>
-
-<script>
-
-/* PASSWORD */
-
-function checkPass(){
-
-let p=document.getElementById("pass").value
-
-if(p==="iqra"){
-
-document.getElementById("login").classList.remove("active")
-document.getElementById("gifScreen").classList.add("active")
-
-setTimeout(()=>{
-
-document.getElementById("gifScreen").classList.remove("active")
-document.getElementById("main").classList.add("active")
-
-startTyping()
-
-},3500)
-
-}else{
-
-alert("Wrong password")
-
-}
-
-}
-
-/* TITLE TYPING */
-
-let titleText="Happy Birthday Iqra 🎉"
-let titleIndex=0
-
-function typeTitle(){
-
-if(titleIndex<titleText.length){
-
-document.getElementById("title").innerHTML+=titleText.charAt(titleIndex)
-
-titleIndex++
-
-setTimeout(typeTitle,90)
-
-}else{
-
-typeMessage()
-
-}
-
-}
-
-/* MESSAGE TYPING */
-
-let messageText=`Hey Bastii ❤️
-
-I know this wish is a little late, but I still wanted to take a moment to celebrate you. Happy Birthday! 🎉 Even if my message didn’t reach you on the exact day, my wishes for you are just as genuine and full of love. You are one of the most amazing people in my life, and I’m really grateful to have a friend like you.
-
-Thank you for always being there, for the laughs, the random conversations, and the memories we’ve created together. You make everything more fun and meaningful just by being yourself. I truly admire your kindness, your strength, and the positive energy you bring wherever you go.
-
-On your birthday, I just want to wish you happiness, success, and all the beautiful things life has to offer. May this year bring you closer to your dreams and fill your days with joy, adventure, and unforgettable moments. You deserve nothing but the best.
-
-I’m sorry again for the late wish, but please know that you’re always appreciated and valued. I hope your birthday was as wonderful as you are. And don’t worry, we’ll celebrate properly soon! 🎂
-
-Happy Belated Birthday, Bastii! 🥳`
-
-let msgIndex=0
-
-function typeMessage(){
-
-if(msgIndex<messageText.length){
-
-document.getElementById("message").innerHTML+=messageText.charAt(msgIndex)
-
-msgIndex++
-
-setTimeout(typeMessage,35)
-
-}
-
-}
-
-function startTyping(){
-
-typeTitle()
-
-}
-
-</script>
+  <audio id="bgMusic" loop preload="auto">
+    <source src="Bairan" type="audio/mpeg">
+    <source src="Bairan.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- CURTAIN OVERLAY -->
+  <div id="curtain-container" onclick="openCurtains()">
+    <div class="curtain-panel curtain-left" id="curtainLeft"></div>
+    <div class="curtain-panel curtain-right" id="curtainRight"></div>
+    <div class="curtain-content" id="curtainContent">
+      <div class="curtain-title">NOW SHOWING</div>
+      <p style="color: #ffe8b6; font-size: 0.9rem;">Show is ready!</p>
+      <div class="tap-btn">TAP TO OPEN 🎬</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section id="section1">
+    <div class="ribbon-text-container">
+      <div class="ribbon-header">Happy Birthday, Farhat 🎂</div>
+      <p class="ribbon-subtext">I made you a tiny little corner of the internet because a normal birthday wish didn't feel special enough. Now tap the pictures… there’s something waiting behind each one. 👀💗</p>
+    </div>
+    <div class="ribbon-loop-container">
+      <img src="images (6).jpeg" class="ribbon-photo p1">
+      <img src="images (5).jpeg" class="ribbon-photo p2">
+      <img src="09d6dccc31aab38bf4a1fa4e883d482d.jpg" class="ribbon-photo p3">
+      <img src="9b826fe11352de15635362587302bafb.jpg" class="ribbon-photo p4">
+      <img src="2662ebb29484d468549b5dd5455fd56b.jpg" class="ribbon-photo p5">
+      <img src="images (4).jpeg" class="ribbon-photo p6">
+      <img src="images (3).jpeg" class="ribbon-photo p7">
+      <img src="images_2.jpeg" class="ribbon-photo p8">
+      <img src="oardefault.jpg" class="ribbon-photo p9">
+      <img src="images (6).jpeg" class="ribbon-photo p10">
+      <img src="images (5).jpeg" class="ribbon-photo p11">
+      <img src="09d6dccc31aab38bf4a1fa4e883d482d.jpg" class="ribbon-photo p12">
+      <img src="9b826fe11352de15635362587302bafb.jpg" class="ribbon-photo p13">
+    </div>
+  </section>
+
+  <!-- SECTION 2: PRECIOUS MOMENTS -->
+  <section id="section2">
+    <h2 class="sec2-title">Precious Moments ✨</h2>
+    <div class="polaroid-grid">
+      <div class="polaroid-card" style="--r: -3" onclick="openNote(event, 'n°01', 'Somehow, out of all the people in this world, I’m really glad I got to know you. 🤍')">
+        <img src="images (6).jpeg">
+        <p>The Beginning</p>
+      </div>
+      <div class="polaroid-card" style="--r: 2" onclick="openNote(event, 'n°02', 'Your smile has this weird little ability to make everything feel better. Never stop smiling. 🫶🏻')">
+        <img src="images (5).jpeg">
+        <p>That Smile</p>
+      </div>
+      <div class="polaroid-card" style="--r: -4" onclick="openNote(event, 'n°03', 'Maybe we don\'t have a hundred pictures together, but the memories we have are still worth keeping forever. 🌷')">
+        <img src="09d6dccc31aab38bf4a1fa4e883d482d.jpg">
+        <p>Our Memories</p>
+      </div>
+      <div class="polaroid-card" style="--r: 3" onclick="openNote(event, 'n°04', 'You’re genuinely one of those people who makes life a little more beautiful just by being in it. ✨')">
+        <img src="2662ebb29484d468549b5dd5455fd56b.jpg">
+        <p>You</p>
+      </div>
+      <div class="polaroid-card" style="--r: -2" onclick="openNote(event, 'n°05', 'Okay… I don\'t say this enough, but you actually mean a lot to me. More than you probably realize. 🥹❤️')">
+        <img src="images (4).jpeg">
+        <p>A Little Secret</p>
+      </div>
+      <div class="polaroid-card" style="--r: 4" onclick="openNote(event, 'n°06', 'Happy Birthday, Farhat! ❤️ I hope this year brings you everything you secretly wish for… and maybe a little more happiness than you expect. 🎀✨')">
+        <img src="images (3).jpeg">
+        <p>Birthday 🎂</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Instagram Note Popup -->
+  <div class="floating-note" id="floatingNote">
+    <div class="note-header">
+      <span id="noteId">n°01</span>
+      <span class="close-btn" onclick="closeNote()">close</span>
+    </div>
+    <div class="note-text" id="noteText">
+      Somehow, out of all the people in this world, I’m really glad I got to know you. 🤍
+    </div>
+  </div>
+
+  <!-- SECTION 3: NOTEBOOK WITH 3 PAGES -->
+  <section id="section3">
+    <div class="notebook-wrapper">
+      <div class="notebook">
+        <div>
+          <div class="pen-heading" id="penHeading">Dear Farhat, ✍️</div>
+          <p class="pen-message" id="penMessage">"I wanted to write something special for you right here. Every single memory we share is saved safely in this tiny corner."</p>
+        </div>
+        <img src="9b826fe11352de15635362587302bafb.jpg" class="pen-photo" id="penPhoto">
+      </div>
+
+      <!-- Book Controls -->
+      <div class="book-nav">
+        <button class="nav-btn" onclick="turnPage(-1)">◀ Prev</button>
+        <span class="page-indicator" id="pageIndicator">Page 1 / 3</span>
+        <button class="nav-btn" onclick="turnPage(1)">Next ▶</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section id="section4">
+    <div class="phone-frame">
+      <div class="phone-header">
+        <h4>Farhat ❤️</h4>
+        <p>iMessage • online now</p>
+      </div>
+      <div class="chat-body">
+        <div class="bubble incoming">Yahaaa?</div>
+        <div class="bubble outgoing">Happpppyeee birthday love.</div>
+        <div class="bubble incoming">Aapka bday hai surprise toh banta hi hai!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM MUSIC PLAYER -->
+  <div class="music-bar">
+    <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+    <div class="track-info">
+      <div class="track-title">🎵 Bairan</div>
+      <div class="progress-container">
+        <span class="time-text" id="currentTime">0:00</span>
+        <input type="range" class="seek-bar" id="seekBar" value="0" min="0" max="100" oninput="seekAudio()">
+        <span class="time-text" id="totalDuration">0:00</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    const audio = document.getElementById('bgMusic');
+    const playBtn = document.getElementById('playBtn');
+    const currentTimeEl = document.getElementById('currentTime');
+    const totalDurationEl = document.getElementById('totalDuration');
+    const seekBar = document.getElementById('seekBar');
+    let autoCloseTimer = null;
+    let isOpen = false;
+
+    /* Notebook Page Data */
+    let currentPage = 1;
+
+    const pagesData = [
+      {
+        heading: "Dear Farhat, ✍️",
+        text: '"I wanted to write something special for you right here. Every single memory we share is saved safely in this tiny corner."',
+        image: "9b826fe11352de15635362587302bafb.jpg"
+      },
+      {
+        heading: "Page 02 🖋️",
+        text: '"I don\'t wanna keep secrets, just wanna keep you. Thank you for being such an awesome person in my life!"',
+        image: "images (3).jpeg"
+      },
+      {
+        heading: "Best Wishes 💖",
+        text: '"May your day be filled with lots of joy, love, and sweet moments. Happy Birthday!"',
+        image: "2662ebb29484d468549b5dd5455fd56b.jpg"
+      }
+    ];
+
+    function turnPage(direction) {
+      const nextPage = currentPage + direction;
+      if (nextPage >= 1 && nextPage <= pagesData.length) {
+        currentPage = nextPage;
+        const pageData = pagesData[currentPage - 1];
+        document.getElementById("penHeading").innerText = pageData.heading;
+        document.getElementById("penMessage").innerText = pageData.text;
+        document.getElementById("penPhoto").src = pageData.image;
+        document.getElementById('pageIndicator').innerText = `Page ${currentPage} / ${pagesData.length}`;
+      }
+    }
+
+    function openCurtains() {
+      if (isOpen) return;
+      isOpen = true;
+
+      window.scrollTo(0, 0);
+
+      audio.play().then(() => {
+        playBtn.innerText = '❚❚';
+      }).catch(err => {
+        console.log("Audio play deferred");
+      });
+
+      document.getElementById('curtainContent').style.opacity = '0';
+      document.getElementById('curtainLeft').classList.add('open-left');
+      document.getElementById('curtainRight').classList.add('open-right');
+
+      setTimeout(() => {
+        document.getElementById('curtain-container').style.display = 'none';
+      }, 1200);
+    }
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+        playBtn.innerText = '❚❚';
+      } else {
+        audio.pause();
+        playBtn.innerText = '▶';
+      }
+    }
+
+    function formatTime(secs) {
+      if (isNaN(secs)) return "0:00";
+      const mins = Math.floor(secs / 60);
+      const seconds = Math.floor(secs % 60);
+      return `${mins}:${seconds < 10 ? '0' : ''}${seconds}`;
+    }
+
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        seekBar.value = progress;
+        currentTimeEl.innerText = formatTime(audio.currentTime);
+        totalDurationEl.innerText = formatTime(audio.duration);
+      }
+    });
+
+    function seekAudio() {
+      if (audio.duration) {
+        audio.currentTime = (seekBar.value / 100) * audio.duration;
+      }
+    }
+
+    function openNote(event, num, text) {
+      event.stopPropagation();
+      if (autoCloseTimer) clearTimeout(autoCloseTimer);
+      
+      document.getElementById('noteId').innerText = num;
+      document.getElementById('noteText').innerText = text;
+      document.getElementById('floatingNote').style.display = 'block';
+
+      autoCloseTimer = setTimeout(() => {
+        closeNote();
+      }, 5000);
+    }
+
+    function closeNote() {
+      if (autoCloseTimer) clearTimeout(autoCloseTimer);
+      document.getElementById('floatingNote').style.display = 'none';
+    }
+
+    document.addEventListener('click', (e) => {
+      const note = document.getElementById('floatingNote');
+      if (note.style.display === 'block' && !note.contains(e.target)) {
+        closeNote();
+      }
+    });
+  </script>
 
 </body>
-</html>
+  </html>
+  
